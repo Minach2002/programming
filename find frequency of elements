@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main()
+{
+    int n,i,j,arr[20],frq[20],ctr;
+    printf("Enter limit:");
+    scanf("%d",&n);
+    printf("enter %d elements: ",n);
+    for(i=0;i<n;i++){
+        scanf("%d ",&arr[i]);
+        frq[i]=-1;
+    }
+    
+    printf("\nentered elements are: ");
+    for(i=0;i<n;i++){
+        printf("%d",arr[i]);
+    }
+    
+    for(i=0;i<n;i++){
+        ctr=1;
+        for(j=i+1;j<n;j++){
+            if(arr[i] == arr[j]){
+                ctr++;
+                frq[j]=0;
+            }
+        }
+        if(frq[i]!=0){
+            frq[i]=ctr;
+        }
+    }
+    
+    printf("\nFrequency of each elements are:");
+    for(i=0;i<n;i++){
+        printf("\n %d occurs %d times",arr[i],frq[i]);
+    }
+
+    return 0;
+}
