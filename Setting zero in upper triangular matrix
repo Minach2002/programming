@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main()
+{
+   int n,i,j,arr[20][20],sum=0;
+    printf("Input the size of the square matrix:");
+    scanf("%d",&n);
+    
+    printf("\nInput elements in the first matrix :");
+    for(i=0;i<n;i++){
+        for(j=0;j<n;j++){
+        printf("\nelement-[%d][%d] : ",i,j);
+        scanf("%d",&arr[i][j]);
+    }
+    }
+    
+    printf("\nMatrix is:");
+    for(i=0;i<n;i++){
+        printf("\n");
+        for(j=0;j<n;j++){
+            printf("%d\t",arr[i][j]);
+        }
+    }
+    
+    printf("\nSetting zero in upper triangular matrix");
+    for(i=0;i<n;i++){
+        printf("\n");
+        for(j=0;j<=n;j++){
+            if(i<j){
+                printf("%d\t",0);
+            }else{
+                printf("%d\t",arr[i][j]);
+            }
+        }
+    }
+
+    return 0;
+}
