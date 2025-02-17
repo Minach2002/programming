@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main()
+{
+    int i,j,r,c,arr[20][20],brr[20][20];
+    printf("input rows and columns: ");
+    scanf("%d%d",&r,&c);
+    
+    printf("Input elements in the first matrix :");
+    for(i=0;i<r;i++){
+        for(j=0;j<c;j++){
+            printf("\nelement-[%d][%d]",i,j);
+            scanf("%d",&arr[i][j]);
+        }
+    }
+    
+    printf("\nMatrix is :");
+    for(i=0;i<r;i++){
+        printf("\n");
+        for(j=0;j<c;j++){
+            printf("%d\t",arr[i][j]);
+        }
+    }
+    
+    for(i=0;i<r;i++){
+        for(j=0;j<c;j++){
+            brr[i][j]=arr[j][i];
+        }
+    }
+
+    printf("\nTranspose of the matrix is:");
+    for(i=0;i<r;i++){
+        printf("\n");
+        for(j=0;j<c;j++){
+            printf("%d\t",brr[i][j]);
+        }
+    }
+    
+    return 0;
+}
