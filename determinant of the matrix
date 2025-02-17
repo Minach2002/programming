@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main()
+{
+    int n,i,j,arr[20][20],det=0;
+    printf("Input elements in the first matrix");
+    
+    
+    for(i=0;i<3;i++){
+        for(j=0;j<3;j++){
+            printf("\nelement[%d][%d]: ",i,j);
+            scanf("%d",&arr[i][j]);
+        }
+    }
+    
+    printf("\nMatrix is:");
+    for(i=0;i<3;i++){
+        printf("\n");
+        for(j=0;j<3;j++){
+            printf("%d\t",arr[i][j]);
+        }
+        
+    }
+    
+    for(i=0;i<3;i++){
+       det = det + (arr[0][i] * (arr[1][(i + 1) % 3] * arr[2][(i + 2) % 3] - arr[1][(i + 2) % 3] * arr[2][(i + 1) % 3]));
+    }
+
+    printf("\nDeterminant of the matrix is: %d",det);
+    return 0;
+}
