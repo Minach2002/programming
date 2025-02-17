@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()
+{
+    int i,j,arr[20][20];
+    printf("\n2D array in 3x3");
+    
+    printf("\ninput in the matrix:");
+    for(i=0;i<3;i++){
+        for(j=0;j<3;j++){
+            printf("element-[%d][%d]: ",i,j);
+            scanf("%d",&arr[i][j]);
+        }
+    }
+    
+    printf("Matrix is:");
+    for(i=0;i<3;i++){
+        printf("\n");
+        for(j=0;j<3;j++){
+            printf("%d \t",arr[i][j]);
+        }
+     printf("\n\n");   
+    }
+
+    return 0;
+}
