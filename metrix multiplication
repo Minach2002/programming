@@ -1,0 +1,63 @@
+#include <stdio.h>
+
+int main()
+{
+    int r1,c1,r2,c2,i,j,k,arr1[20][20],arr2[20][20],arr3[20][20];
+    printf("Input the rows and columns of first matrix:");
+    scanf("%d%d",&r1,&c1);
+    
+    printf("\nInput the rows and columns of second matrix:");
+    scanf("%d%d",&r2,&c2);
+    printf("enter elements of 1st array %dx%d order:",r1,c1);
+    
+    for(i=0;i<r1;i++){
+        for(j=0;j<c1;j++){
+            scanf("%d",&arr1[i][j]);
+        }
+    }
+    
+    printf("enter elements of 2nd array %dx%d order:",r2,c2);
+    for(i=0;i<r1;i++){
+        for(j=0;j<c1;j++){
+            scanf("%d",&arr2[i][j]);
+        }
+    }
+    
+    
+    printf("\n1st matrix is:");
+    for(i=0;i<r1;i++){
+    printf("\n");    
+     for(j=0;j<c1;j++){
+            printf("%d ",arr1[i][j]);
+        }
+        
+    }
+    
+    printf("\n2nd matrix is:");
+    for(i=0;i<r2;i++){
+    printf("\n");    
+     for(j=0;j<c2;j++){
+            printf("%d ",arr2[i][j]);
+        }
+        
+    }
+    
+ 
+    for(i=0;i<r1;i++){
+        for(j=0;j<c2;j++){
+            arr3[i][j]=0;
+            for(k=0;k<c1;k++){
+                arr3[i][j] += arr1[i][k] * arr2[k][j];
+            }
+        }
+    }
+    
+    printf("\nmuiltipication of these 2 arrays:");
+    for(i=0;i<r1;i++){
+        printf("\n");
+        for(j=0;j<c1;j++){
+            printf("%d\t",arr3[i][j]);
+        }
+    }   
+    return 0;
+}
